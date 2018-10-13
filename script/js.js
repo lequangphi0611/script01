@@ -6,6 +6,7 @@ function getBMI(){
   var weight = document.getElementById('weight').value;
   var height = document.getElementById('height').value;
   var showElement = document.getElementById('show');//show ra màn hình
+  
   if(weight == "" || height == ""){
       showElement.innerHTML = "Vui lòng nhập đầy đủ dữ liệu";
   }else if(isNaN(weight) || isNaN(height)){
@@ -13,7 +14,7 @@ function getBMI(){
   }else{
     weight = parseFloat(weight);
     height = parseFloat(height);
-    if(weight < 0 && height < 0){
+    if(weight <= 0 || height <= 0){
       showElement.innerHTML = "Dữ liệu nhập vào phải lớn hơn 0";
     }else{
       var bmi = BMI(weight,height);
